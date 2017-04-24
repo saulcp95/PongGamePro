@@ -1,0 +1,26 @@
+--CREATE DATABASE "CoolPanda"
+--  WITH OWNER = postgres
+--       ENCODING = 'UTF8'
+--       TABLESPACE = pg_default
+--       LC_COLLATE = 'Spanish_Costa Rica.1252'
+--       LC_CTYPE = 'Spanish_Costa Rica.1252'
+--       CONNECTION LIMIT = -1;
+
+
+--drop table log;
+--drop table usuario;
+
+
+CREATE TABLE log
+(
+usuario		varchar(30), 		
+fecha 		varchar(50),
+accion		varchar(100)	
+);
+
+CREATE TABLE usuario
+(
+nombre		varchar(30), 
+email 		varchar(30),
+password	varchar(300)
+);

@@ -1,0 +1,119 @@
+{%extends "header.html" %}
+
+{% block body %} 
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!--<script type = text/javascript>
+$(function() {
+	$('#jugar').bind('click', function() {
+		location.href = this.val();
+		});
+	});
+</script> -->
+
+
+<div class="container" align="center">
+<div role="tabpanel">
+
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#Juego" aria-controls="Juego" role="tab" data-toggle="tab">Juego</a></li>
+    <li role="presentation"><a href="#Chat" aria-controls="Chat" role="tab" data-toggle="tab">Chat</a></li>
+    <li role="presentation"><a href="#AP" aria-controls="AP" role="tab" data-toggle="tab">Alta puntuación</a></li>
+
+  </ul>
+
+  <!-- Tab panes -->
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane fade in active" id="Juego">
+	<h4>Juega pong:</h4>
+	<p>	Pong (o Tele-Pong) fue un videojuego de la primera generación de videoconsolas publicado por Atari, creado por Nolan Bushnell y lanzado el 29 de noviembre de 1972. Pong está basado en el deporte de tenis de mesa (o ping pong). La palabra Pong es una marca registrada por Atari Interactive, mientras que la palabra genérica «pong» es usada para describir el género de videojuegos «bate y bola». </p>
+	<br></br>
+	
+	<form name = "Configuracion" action="" class="form-inline" method = 'POST'>
+	<dl>
+	<p>Seleccione la configuración de jugadores.</p>
+		<select id = "j1" name = "jugadores">
+		<dt><option for="PvPc" value="PvPc">Jugador vs PC </option>
+		<dd><class="form-control" name="jugadores" value="{{request.form.jugadores}}"></dd>
+		<dt><option for="PvP" value="PvP">Jugador vs Jugador</option>
+		<dd><class="form-control" name="jugadores" value="{{request.form.jugadores}}"></dd>
+		</select>
+	
+
+	<br></br>
+	<p>Seleccione la configuración de puntos.</p>
+	<select id = "p1" name = "puntos">
+	<option value="dosDeTres">Dos de tres</option>
+	<option value="tresDeCinco">Tres de cinco</option>
+	<option value="cuatroDeSiete">Cuatro de siete</option>
+	</select>
+	</dl>
+	</form>
+	<center> 
+		<a href= "/jugar/" id=jugar>
+			<button type= "button" class= "btn btn-primary" aria-label= "Left Align"
+				style= "margin-top: 5px; margin-bottom: 5px; height: 44px; margin-right: 15px">
+				<span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span> Jugar!
+			</button>
+		<!--
+		onchange = "javascript:location.href = this.value;"
+		<a href=# id=jugar><button class='btn btn-default'>Jugar!</button></a>
+		<a href= " /jugar/">
+			<button type= "button" class= "btn btn-primary" aria-label= "Left Align"
+				style= "margin-top: 5px; margin-bottom: 5px; height: 44px; margin-right: 15px">
+				<span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span> Jugar!
+			</button>-->
+		</a>
+	</center>
+  </div>
+  
+  <div role="tabpanel" class="tab-pane fade" id="Chat">
+  <h4>Chatea con tus amigos:</h4>
+  <br></br>
+  <p>Únete al chat más grande de Pong de la red.</p>
+  <br></br>
+  <center> 
+		<a href= " /jugar/">
+			<button type= "button" class= "btn btn-primary" aria-label= "Left Align"
+				style= "margin-top: 5px; margin-bottom: 5px; height: 44px; margin-right: 15px">
+				<span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span> Chatear!
+			</button>
+		</a>
+	</center>
+  </div>
+  <div role="tabpanel" class="tab-pane fade" id="AP">
+  <h4>Muestra los  10 jugadores con puntuación más alta:</h4>
+  <p>Cónoce los más grandes rivales.</p>
+  <br></br>
+  <center> 
+		<a href= " /jugar/">
+			<button type= "button" class= "btn btn-primary" aria-label= "Left Align"
+				style= "margin-top: 5px; margin-bottom: 5px; height: 44px; margin-right: 15px">
+				<span class="glyphicon glyphicon-play-circle" aria-hidden="true"></span> Altos Puntajes!
+			</button>
+		</a>
+	</center>
+  </div>
+
+</div>
+
+
+	{% if error %}
+			<p class="error"><strong>Error:</strong> {{ error }}</p>
+	{% endif %}
+
+
+</div>
+</div>
+
+{% endblock %}
+
+<!--
+<html>
+  <head>
+    <script src="../static/js/pong.js"></script>
+	<script type = "text/javascript" src="../static/js/game_setup.js"></script>
+  </head>
+  <body></body>
+</html> --> 
